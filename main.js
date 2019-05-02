@@ -1,6 +1,9 @@
 const messaging = firebase.messaging();
 messaging.usePublicVapidKey("BFaMnQbYJJYEngX8aNIqVirW8m6XPwsAJr2vpy7lU1zl4bNq1lBr4FAUWjCciDimLfIBx0RlOzQG_s7E0clfTzA");
-messaging.requestPermission().then(function() {
+navigator.serviceWorker.register('/pushNotifications/firebase-messaging-sw.js')
+.then((registration) => {
+    messaging.useServiceWorker(registration);
+    messaging.requestPermission().then(function() {
     console.log('Notification permission granted.');
     // TODO(developer): Retrieve an Instance ID token for use with FCM.
     // Get Instance ID token. Initially this makes a network call, once retrieved
@@ -21,6 +24,9 @@ messaging.requestPermission().then(function() {
         //showToken('Error retrieving Instance ID token. ', err);
         //setTokenSentToServer(false);
     });
+
+    // Request permission and get token.....
+});
   
     // ...
 }).catch(function(err) {
