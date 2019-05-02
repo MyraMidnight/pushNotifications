@@ -1,0 +1,11 @@
+{
+    "name": "My firts push apps",
+    "short_name": "Push App",
+    "icons": [{
+          "src": "images/icon-192x192.png",
+          "sizes": "192x192"
+        }],
+    "start_url": "./index.html",
+    "display": "standalone",
+    "gcm_sender_id": "186984115408"
+  }
