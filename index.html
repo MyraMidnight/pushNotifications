@@ -24,12 +24,6 @@
         };
         // Initialize Firebase
         firebase.initializeApp(firebaseConfig);
-        navigator.serviceWorker.register('/pushNotifications/firebase-messaging-sw.js')
-        .then((registration) => {
-            messaging.useServiceWorker(registration);
-
-            // Request permission and get token.....
-        });
     </script>
 </head>
 <body>
