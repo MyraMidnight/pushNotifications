@@ -34,6 +34,7 @@ navigator.serviceWorker.register('/pushNotifications/firebase-messaging-sw.js')
 });
 
 const sendTokenToServer = (token)=>{
+    document.getElementById("token").innerHTML=token;
     console.log("The token is:",token);
     const data = { token}
     fetch("http://localhost:3000", {
